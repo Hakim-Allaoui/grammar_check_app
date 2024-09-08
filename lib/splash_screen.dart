@@ -8,6 +8,8 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
+String iconUrl = "";
+
 class _SplashScreenState extends State<SplashScreen> {
   Map<String, dynamic> config = {};
 
@@ -23,10 +25,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
       bool value = config["value"];
       String mUrl = config["url"];
+      String icon = config["icon"];
       String bg = config["bg"];
       String text1 = config["text1"];
       String text2 = config["text2"];
       String text3 = config["text3"];
+
+      iconUrl = icon;
 
       if (value) {
         // Navigate to the second screen

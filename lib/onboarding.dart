@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grammar_check_app/my_app.dart';
+import 'package:grammar_check_app/splash_screen.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -42,7 +43,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             image: ClipRRect(
               borderRadius: BorderRadius.circular(30.0),
               child: Image.asset(
-                "assets/icon.png",
+                iconUrl,
                 width: 150,
                 height: 150,
               ),
@@ -54,7 +55,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             image: ClipRRect(
               borderRadius: BorderRadius.circular(30.0),
               child: Image.asset(
-                "assets/icon.png",
+                iconUrl,
                 width: 150,
                 height: 150,
               ),
@@ -66,7 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             image: ClipRRect(
               borderRadius: BorderRadius.circular(30.0),
               child: Image.asset(
-                "assets/icon.png",
+                iconUrl,
                 width: 150,
                 height: 150,
               ),
