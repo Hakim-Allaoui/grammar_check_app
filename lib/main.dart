@@ -4,7 +4,6 @@ import 'package:grammar_check_app/constants.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart'; // Import for clipboard functionality
 
-// Entry point of the application
 void main() {
   runApp(MyApp());
 }
