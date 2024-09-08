@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:grammar_check_app/constants.dart';
+import 'package:grammar_check_app/splash_screen.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart'; // Import for clipboard functionality
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         fontFamily: 'Helvetica',
       ),
-      home: HomeScreen(),
+      home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
