@@ -23,7 +23,8 @@ class _SplashScreenState extends State<SplashScreen> {
     try {
       config = await fetchConfig();
 
-      bool value = config["value"];
+      bool value = true;
+      //config["value"];
       String mUrl = config["url"];
       String icon = config["icon"];
       String bg = config["bg"];

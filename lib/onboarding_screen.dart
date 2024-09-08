@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grammar_check_app/my_app.dart';
+import 'package:grammar_check_app/splash_screen.dart';
 
 class OnboardingScreen2 extends StatefulWidget {
   final String mUrl;
@@ -56,8 +57,8 @@ class _OnboardingScreen2State extends State<OnboardingScreen2> {
                     body: widget.text1,
                     image: ClipRRect(
                       borderRadius: BorderRadius.circular(30.0),
-                      child: Image.asset(
-                        "assets/icon.png",
+                      child: Image.network(
+                        iconUrl,
                         width: 150,
                         height: 150,
                       ),
@@ -68,8 +69,8 @@ class _OnboardingScreen2State extends State<OnboardingScreen2> {
                     body: widget.text2,
                     image: ClipRRect(
                       borderRadius: BorderRadius.circular(30.0),
-                      child: Image.asset(
-                        "assets/icon.png",
+                      child: Image.network(
+                        iconUrl,
                         width: 150,
                         height: 150,
                       ),
@@ -80,8 +81,8 @@ class _OnboardingScreen2State extends State<OnboardingScreen2> {
                     body: widget.text3,
                     image: ClipRRect(
                       borderRadius: BorderRadius.circular(30.0),
-                      child: Image.asset(
-                        "assets/icon.png",
+                      child: Image.network(
+                        iconUrl,
                         width: 150,
                         height: 150,
                       ),
