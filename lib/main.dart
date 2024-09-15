@@ -203,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 24),
 
               // Submit Button
-              SizedBox(
+              /*SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: _isLoading ? null : _handleSubmit,
@@ -238,19 +238,46 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                 ),
               ),
-              SizedBox(height: 24),
+              */
+              //SizedBox(height: 4),
 
               // Result Section
               if (_result.isNotEmpty) ...[
-                Text(
-                  'Result:',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.green[700],
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Result:',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.green[700],
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Clipboard.setData(ClipboardData(text: _result));
+                        _showSnackBar('Copied to clipboard!');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Text('Copy'),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Icon(Icons.copy),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 8),
                 Container(
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
@@ -272,25 +299,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 16),
-                ElevatedButton(
-                  onPressed: () {
-                    Clipboard.setData(ClipboardData(text: _result));
-                    _showSnackBar('Copied to clipboard!');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  child: Text('Copy'),
-                ),
+                SizedBox(height: 10),
               ],
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _isLoading ? null : _handleSubmit,
+        backgroundColor: _isLoading ? Colors.green[50] : Colors.green[700],
+        focusColor: Colors.green[50],
+        foregroundColor: Colors.white,
+        child: _isLoading
+            ? SizedBox(
+                height: 30.0,
+                width: 30.0,
+                child: const CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                ),
+              )
+            : Icon(Icons.send),
       ),
     );
   }
